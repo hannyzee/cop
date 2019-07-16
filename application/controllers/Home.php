@@ -3,15 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		if (!$this->session->userdata('userid')) {
+			redirect('login');
+		}
+	}
+
 	public function index()
 	{
 		$this->load->view('pages/dashboard');
 	}
 
-	public function sign_up()
-	{
-		$this->load->view('pages/register');
-	}
 
 	public function details()
 	{
@@ -19,52 +23,38 @@ class Home extends CI_Controller {
 	}
 
 	public function open_account()
-
-	{
-		$this->load->view('pages/account');
+	{	
+		$userid = $this->session->userdata('userid');
+		$this->load->view('pages/accounts/account');
 	}
 
 	public function loans()
 
 	{
-		$this->load->view('pages/loan');
+		$this->load->view('pages/loan/loan');
 	}
 
 	public function approve_loan()
 
 	{
-		$this->load->view('pages/approval');
+		$this->load->view('pages/loan/approval');
 	}
 
 	public function deposits()
 
 	{
-		$this->load->view('pages/deposit.php');
+		$this->load->view('pages/account/deposit.php');
 	}
 
 	public function balance()
 
 	{
-		$this->load->view('pages/balance.php');
-	}
-	public function account_type()
-	{
-		$this->load->view('pages/accountype.php');
-	}
-
-	public function manages()
-	{
-		$this->load->view('pages/manage_account');
-	}
-
-	public function request()
-	{
-		$this->load->view('pages/view_loan');
+		$this->load->view('pages/accounts/balance.php');
 	}
 
 	public function withdraw()
 	{
-		$this->load->view('pages/withdrawal');
+		$this->load->view('pages/accounts/withdrawal');
 	}
 
 	public function contribute()
@@ -81,5 +71,6 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('pages/contribution_status');
 	}
+
 
 }

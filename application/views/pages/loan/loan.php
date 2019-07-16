@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-    <title>Manage Account</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -48,7 +47,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Manage Account</h3>
+                    <h3 class="text-themecolor">Loan Request</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -71,35 +70,56 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <!-- Row -->
-                <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Account Number</th>
-                                                <th>Account Name</th>
-                                                <th>Account Type</th>
-                                                <th>User Id</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="<?php echo base_url('home/balance');?>">Order #26589</a></td>
-                                                <td>Herman Beck</td>
-                                                <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 16, 2017</span> </td>
-                                                <td>$45.00</td>
-                                                <td><button type="button" class="btn waves-effect waves-light btn-sm btn-danger">Deactivate</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="form" method="post" action="<?php echo site_url('loan/loans');?>">
+                                    <div class="form-group m-t-40 row">
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="hidden" name="loan_id" value="" id="example-text-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Account" class="col-md-2 col-form-label">Name</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text"  name="user_id id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Amount</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="num"  id="amount" name="amount">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date and time</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="date"  id="loan_date" name="loan_date">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Duration</label>
+                                        <div class="col-md-10">
+                                             <select class="custom-select col-12" id="" name="duration">
+                                                <option selected="">Choose...</option>
+                                                <option value="6 Months">6 Months</option>
+                                                <option value="12 months">12 Months</option>
+                                                <option value="18 months">18 Months</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        <button type="button" class="btn btn-inverse">Cancel</button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
-
+                </div>
+               
                 <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->

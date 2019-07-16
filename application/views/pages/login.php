@@ -21,7 +21,7 @@
         <div class="login-box card">
             <div class="card-body">
                 <h4 class="card-title">Sign In</h4>
-                <form  class="form-horizontal" id="loginform" action="">
+                <form  class="form-horizontal" id="loginform" method="post" action="<?php echo site_url('auth/authentication');?>"> 
                     <div class="form-group">
                         <label for="exampleInputuname">User Name</label>
                         <div class="input-group">
@@ -30,7 +30,7 @@
                                     <i class="ti-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="exampleInputuname" placeholder="Username">
+                            <input type="text" class="form-control" id="userid" name="userid" placeholder="Username">
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@
                                     <i class="ti-lock"></i>
                                 </span>
                             </div>
-                            <input type="password" class="form-control" id="pwd1" placeholder="Enter email">
+                            <input type="password" class="form-control" id="pword" name="pword" placeholder="Enter password">
                         </div>
                     </div>
                     <div class="form-group row">

@@ -3,8 +3,10 @@
 <html lang="en">
 
 <head>
-    <title>AFMS,Payement</title>
+  
+    <title>Loan Approv</title>
    <?php $this->load->view('main/head');?>
+
 </head>
 
 <body class="fix-header card-no-border">
@@ -75,34 +77,52 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form">
+                                <form class="form" method="post" action="<?php echo site_url('');?>">
                                     <div class="form-group m-t-40 row">
                                         <div class="col-md-10">
-                                            <input class="form-control" type="hidden" value="" id="" name="">
+                                            <input class="form-control" type="hidden" value="<?php echo $approve->loan_id ?>" id="" name="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="Account" class="col-md-2 col-form-label">Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
+                                            <input class="form-control" type="text" readonly value="<?php echo $approve->user_id ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="example-number-input" class="col-md-2 col-form-label">Amount</label>
+                                        <label for="example-number-input" class="col-md-2 col-form-label">Requested Amount</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="example-number-input">
+                                            <input class="form-control" type="number" value="<?php echo $approve->amount ?>" readonly >
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Request Date</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="date" value="<?php echo $approve->loan_date ?>" readonly>
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Duration</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" value="<?php echo $approve->duration ?>" readonly>
                                         </div>
                                     </div>
                                       <div class="form-group row">
-                                        <label for="example-tel-input" class="col-md-2 col-form-label">Approved By</label>
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Approved Amount</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="" id="">
+                                            <input class="form-control" name="approveamount" type="number" value="" id="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date and time</label>
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Date Approved</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                                            <input class="form-control" name="dappove" type="date" value="" id="">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Deadline</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="deadline" type="date" value="" id="">
                                         </div>
                                     </div>
                                     <div class="form-actions">

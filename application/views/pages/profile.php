@@ -70,12 +70,10 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <!-- Row -->
-                <div class="row">
+                  <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-outline-info">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Other Sample form</h4>
-                            </div>
+    
                             <div class="card-body">
                                 <form action="#">
                                     <div class="form-body">
@@ -85,14 +83,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">First Name</label>
-                                                    <input type="text" id="firstName" class="form-control"  required data-validation-required-message="This field is required">
-                                                 </div>
+                                                    <input type="text" id="fname" class="form-control" placeholder="">
+                                                    </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Last Name</label>
-                                                    <input type="text" id="lastName" class="form-control"  required data-validation-required-message="This field is required">
+                                                    <input type="text" id="lname" class="form-control form-control-danger" placeholder="">
                                                      </div>
                                             </div>
                                             <!--/span-->
@@ -102,17 +100,17 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Gender</label>
-                                                    <select required class="form-control">
-                                                        <option value="">Male</option>
-                                                        <option value="">Female</option>
+                                                    <select class="form-control custom-select" name="gender">
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
                                                     </select>
                                                  </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Date of Birth</label>
-                                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                                    <label class="control-label">Other Names</label>
+                                                    <input type="text" id="oname" class="form-control" placeholder="">
                                                 </div>
                                             </div>
                                             <!--/span-->
@@ -121,8 +119,15 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
+                                                    <label class="control-label">Date Of Birth</label>
+                                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="dob" id="dob">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
                                                     <label class="control-label">Membership</label>
-                                                      <div class="m-b-10">
+                                                    <div class="m-b-10">
                                                         <label class="custom-control custom-radio">
                                                             <input id="member" name="non member" type="radio" class="custom-control-input">
                                                             <span class="custom-control-label">Member</span>
@@ -135,12 +140,6 @@
                                                 </div>
                                             </div>
                                             <!--/span-->
-                                              <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Username</label>
-                                                    <input type="text" class="form-control" placeholder="">
-                                                </div>
-                                            </div>
                                         </div>
                                         <!--/row-->
                                         <h3 class="box-title m-t-40">Address</h3>
@@ -149,7 +148,7 @@
                                             <div class="col-md-12 ">
                                                 <div class="form-group">
                                                     <label>Street</label>
-                                                    <input type="text" class="form-control"  required data-validation-required-message="This field is required">
+                                                    <input type="text" class="form-control" name="street" id="street">
                                                 </div>
                                             </div>
                                         </div>
@@ -157,14 +156,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>City</label>
-                                                    <input type="text" class="form-control" required data-validation-required-message="This field is required">
+                                                    <input type="text" class="form-control" name="city" id="city">
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>State</label>
-                                                    <input type="text" class="form-control"  required data-validation-required-message="This field is required">
+                                                    <input type="text" class="form-control" name="state" id="state">
                                                 </div>
                                             </div>
                                             <!--/span-->
@@ -174,18 +173,29 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Phone Number</label>
-                                                    <input  type="tel" value="1-(555)-555-5555" id="example-tel-input" class="form-control"  required data-validation-required-message="This field is required">
+                                                    <input type="tel" value="+234-(5555)-(5555)"  id="phone_number" class="form-control">
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Email</label>
-                                                     <input type="email" class="form-control"  data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Email">
+                                                    <label>Nationality</label>
+                                                    <select class="form-control custom-select" id="nationality" name="nationality">
+                                                        <option>--Select your Country--</option>
+                                                        <option value="nigerian">Nigerian</option>
+                                                        <option value="non nigerian">Non Nigerian</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                         </div>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Date</label>
+                                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="datecreated" id="datecreated">
+                                                </div>
+                                            </div>
                                     </div>
                                     <div class="form-actions">
                                         <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
@@ -196,6 +206,7 @@
                         </div>
                     </div>
                 </div>
+
                
                 <!-- Row -->
                 <!-- ============================================================== -->
@@ -245,17 +256,6 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
-     <script src="<?php echo base_url('assets/js/validation.js');?>"></script>
-     <script>
-    ! function(window, document, $) {
-        "use strict";
-        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
-            checkboxClass: "icheckbox_square-green",
-            radioClass: "iradio_square-green"
-        }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
-    }(window, document, jQuery);
-    </script>
-
     <!-- Style switcher -->
     <!-- ============================================================== -->
      <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>

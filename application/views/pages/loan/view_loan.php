@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Create Account</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -33,7 +31,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <?php $this->load->view('main/sidebar');?>
+             <?php $this->load->view('main/sidebar');?>
             <!-- End Sidebar scroll-->
         </aside>
         <!-- ============================================================== -->
@@ -48,16 +46,16 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Create Account</h3>
+                    <h3 class="text-themecolor">Loan Request</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item">Forms</li>
-                        <li class="breadcrumb-item active">Form Layout</li>
+                        <li class="breadcrumb-item">pages</li>
+                        <li class="breadcrumb-item active">Table basic</li>
                     </ol>
                 </div>
-                <div class="">
+                <div>
                     <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
                 </div>
             </div>
@@ -68,81 +66,59 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form">
-                                    <div class="form-group m-t-40 row">
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="hidden" value="" id="" name="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-tel-input" class="col-md-2 col-form-label">Account Name</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-number-input" class="col-md-2 col-form-label">Minimum Balance</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">fixed Charge</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Percentage</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Type Discription</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-month-input" class="col-md-2 col-form-label">Date</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="date" value="" id="">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-month-input" class="col-md-2 col-form-label">Created By</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                        <button type="button" class="btn btn-inverse">Cancel</button>
-                                    </div>
-                                </form>
+                                <h4 class="card-title">Data Export</h4>
+                                <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                                <div class="table-responsive m-t-40">
+                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>#ID</th>
+                                                <th>Member Name</th>
+                                                <th>Requested Amount</th>
+                                                <th>Date</th>
+                                                <th>Duration</th>
+                                                <th>Approve</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>#ID</th>
+                                                <th>Member Name</th>
+                                                <th>Requested Amount</th>
+                                                <th>Date</th>
+                                                <th>Duration</th>
+                                                <th>Approve</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                           <?php 
+                                            foreach($loans as $loans){
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $loans->loan_id; ?></td>
+                                                    <td><?php echo $loans->user_id; ?></td>
+                                                    <td><?php echo $loans->amount; ?></td>
+                                                    <td><?php echo $loans->loan_date; ?></td>
+                                                    <td><?php echo $loans->duration; ?></td>
+                                                  <td><a href="<?php echo base_url('loan/loan_approval/'.$loans->loan_id);?>"><button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">view</button></a></td>
+                                                </tr>
+                                            <?php }?>
+                                        </tbody>
+                                    </table>
 
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-               
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-               
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -150,9 +126,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer">
-                © 2017 Admin Press Admin by themedesigner.in
-            </footer>
+            <footer class="footer"> © 2017 Admin Press Admin by themedesigner.in </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -167,7 +141,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
+     <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/popper.min.js');?>"></script>
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js');?>"></script>
@@ -182,9 +156,60 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
+  <!-- This is data table -->
+    <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js');?>"></script>
+    <!-- start - This is for export functionality only -->
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    </script>
+    <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-     <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

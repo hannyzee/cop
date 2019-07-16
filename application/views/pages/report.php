@@ -47,7 +47,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Loan Request</h3>
+                    <h3 class="text-themecolor">Form Layout</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -74,50 +74,13 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form">
-                                    <div class="form-group m-t-40 row">
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="hidden" value="" id="example-text-input">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="Account" class="col-md-2 col-form-label">Name</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-tel-input" class="col-md-2 col-form-label">Amount</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="num" value="" id="example-tel-input">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-number-input" class="col-md-2 col-form-label">Discription</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text"  id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date and time</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Duration</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                        <button type="button" class="btn btn-inverse">Cancel</button>
-                                    </div>
-                                </form>
-
+                                <div class="click2edit m-b-40">Click on Edite button and change the text then save it.</div>
+                                <button id="edit" class="btn btn-info btn-rounded" onclick="edit()" type="button">Edit</button>
+                                <button id="save" class="btn btn-success btn-rounded" onclick="save()" type="button">Save</button>
                             </div>
                         </div>
+                    </div>
+ 
                     </div>
                 </div>
                

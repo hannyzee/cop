@@ -21,7 +21,7 @@
         <div class="login-box card">
             <div class="card-body">
                 <h4 class="card-title">Sign Up</h4>
-                <form  class="form-horizontal" id="loginform" action="">
+                <form  class="form-horizontal" id="regform" method="post" action="<?php echo site_url('auth/register');?>"> 
                     <div class="form-group">
                         <label for="exampleInputuname">User Name</label>
                         <div class="input-group">
@@ -30,7 +30,7 @@
                                     <i class="ti-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="uname" id="uname" placeholder="Username">
+                            <input type="text" class="form-control" name="userid" id="userid" placeholder="Username" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@
                                     <i class="ti-email"></i>
                                 </span>
                             </div>
-                            <input type="email" class="form-control" name="eemail" id="eemail" placeholder="Enter email">
+                            <input type="email" class="form-control" name="eemail" id="eemail" placeholder="Enter email" data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Email" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -52,7 +52,7 @@
                                     <i class="ti-lock"></i>
                                 </span>
                             </div>
-                            <input type="password" class="form-control" name="pwd1" id="pwd1" placeholder="Enter email">
+                            <input type="password" class="form-control" name="pword" id="pword" placeholder="Enter password" required data-validation-required-message="This field is required">
                         </div>
                     </div>
                     <div class="form-group">
@@ -63,7 +63,7 @@
                                     <i class="ti-lock"></i>
                                 </span>
                             </div>
-                            <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="Enter email">
+                            <input type="password" class="form-control" name="pword" id="pword" placeholder="confirm password" data-validation-match-match="pword" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -110,6 +110,18 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/validation.js');?>"></script>
+    <script>
+        ! function(window, document, $) {
+                "use strict";
+                $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                    checkboxClass: "icheckbox_square-green",
+                    radioClass: "iradio_square-green"
+                }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+            }(window, document, jQuery);
+
+    </script>
+
     <!-- Style switcher -->
     <!-- ============================================================== -->
      <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>

@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <title>Create Account</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -47,7 +48,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Contribution Status</h3>
+                    <h3 class="text-themecolor">Create Account</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -71,61 +72,61 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                       <thead>
-                                            <tr>
-                                                <th>Contribution Name</th>
-                                                <th>Progress</th>
-                                                <th>Deadline</th>
-                                                <th>Amount</th>
-                                                <th>Total Amount</th>
-                                                <th class="text-nowrap">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                             <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="form" method="post" action="<?php echo site_url('account/create_account');?>">
+                                    <div class="form-group m-t-40 row">
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="hidden" name="acctid">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Account Name</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" value="" id="" name="acctname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-number-input" class="col-md-2 col-form-label">Minimum Balance</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="number" value="0.00" id="" name="minbalance">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">fixed Charge</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="number" value="0.00" id="" name="fixcharge">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Type Discription</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" name="dicrip" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-month-input" class="col-md-2 col-form-label">Date</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="date" name="datecreated" id="">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-month-input" class="col-md-2 col-form-label">Created By</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" name="createdby" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        <button type="button" class="btn btn-inverse">Cancel</button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                 
-
                
                 <!-- Row -->
                 <!-- ============================================================== -->

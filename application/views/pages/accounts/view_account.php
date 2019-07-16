@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +31,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <?php $this->load->view('main/sidebar');?>
+             <?php $this->load->view('main/sidebar');?>
             <!-- End Sidebar scroll-->
         </aside>
         <!-- ============================================================== -->
@@ -47,16 +46,16 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Contribution Status</h3>
+                    <h3 class="text-themecolor">Loan Request</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item">Forms</li>
-                        <li class="breadcrumb-item active">Form Layout</li>
+                        <li class="breadcrumb-item">pages</li>
+                        <li class="breadcrumb-item active">Table basic</li>
                     </ol>
                 </div>
-                <div class="">
+                <div>
                     <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
                 </div>
             </div>
@@ -67,75 +66,61 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                       <thead>
+                                <h4 class="card-title">Data Export</h4>
+                                <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                                <div class="table-responsive m-t-40">
+                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
                                             <tr>
-                                                <th>Contribution Name</th>
-                                                <th>Progress</th>
-                                                <th>Deadline</th>
-                                                <th>Amount</th>
-                                                <th>Total Amount</th>
-                                                <th class="text-nowrap">Action</th>
+                                                <th>Account Number</th>
+                                                <th>Account Name</th>
+                                                <th>Minimum Balance</th>
+                                                <th>Fixes Charge</th>
+                                                <th>Action</th>
+                                             
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tfoot>
                                             <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                <th>Account Number</th>
+                                                <th>Account Name</th>
+                                                <th>Minimum Balance</th>
+                                                <th>Fixes Charge</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                           <?php 
+                                            foreach($acctype as $acctype){
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $acctype->acctid; ?></td>
+                                                    <td><?php echo $acctype->acctname; ?></td>
+                                                    <td><?php echo $acctype->minbalance; ?></td>
+                                                    <td><?php echo $acctype->fixcharge; ?></td>
+                                                     <td class="text-nowrap">
+                                                    <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
                                                     <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
                                                 </td>
-                                            </tr>
-                                             <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
+
+                                                </tr>
+                                            <?php }?>
                                         </tbody>
                                     </table>
+
+
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                 
-
-               
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-               
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -143,9 +128,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer">
-                © 2017 Admin Press Admin by themedesigner.in
-            </footer>
+            <footer class="footer"> © 2017 Admin Press Admin by themedesigner.in </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -160,7 +143,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
+     <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/popper.min.js');?>"></script>
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js');?>"></script>
@@ -175,9 +158,60 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
+  <!-- This is data table -->
+    <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js');?>"></script>
+    <!-- start - This is for export functionality only -->
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    </script>
+    <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-     <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

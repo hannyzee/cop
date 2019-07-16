@@ -76,49 +76,44 @@
                                 <h4 class="card-title">Data Export</h4>
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
+                                                <th>#ID</th>
+                                                <th>Member Name</th>
+                                                <th>Requested Amount</th>
                                                 <th>Date</th>
-                                                <th>Approved By</th>
+                                                <th>Duration</th>
+                                                <th>Approve</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                 <th>Name</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
+                                                <th>#ID</th>
+                                                <th>Member Name</th>
+                                                <th>Requested Amount</th>
                                                 <th>Date</th>
-                                                <th>Approved By</th>
+                                                <th>Duration</th>
+                                                <th>Approve</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td><a href="<?php echo base_url('home/approve_loan');?>">Tiger Nixon</a></td>
-                                                <td>System Architect</td>
-                                                <td><span class="label label-danger">pending</span></td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="<?php echo base_url('home/approve_loan');?>">Tiger Nixon</a></td>
-                                                <td>Accountant</td>
-                                                <td><span class="label label-success">approved</span></td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="<?php echo base_url('home/approve_loan');?>">Garrett Winters</a></td>
-                                                <td>Accountant</td>
-                                                <td><span class="label label-success">approved</span></td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
+                                           <?php 
+                                            foreach($loans as $loans){
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $loans->loan_id; ?></td>
+                                                    <td><?php echo $loans->user_id; ?></td>
+                                                    <td><?php echo $loans->amount; ?></td>
+                                                    <td><?php echo $loans->loan_date; ?></td>
+                                                    <td><?php echo $loans->duration; ?></td>
+                                                  <td><a href="<?php echo base_url('loan/loan_approval/'.$loans->loan_id);?>"><button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">view</button></a></td>
+                                                </tr>
+                                            <?php }?>
                                         </tbody>
                                     </table>
+
+
                                 </div>
                             </div>
                         </div>

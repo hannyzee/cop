@@ -3,6 +3,8 @@
 <html lang="en">
 
 <head>
+  
+    <title>Loan Approv</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -47,7 +49,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Contribution Status</h3>
+                    <h3 class="text-themecolor">Open Account</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -71,61 +73,67 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                       <thead>
-                                            <tr>
-                                                <th>Contribution Name</th>
-                                                <th>Progress</th>
-                                                <th>Deadline</th>
-                                                <th>Amount</th>
-                                                <th>Total Amount</th>
-                                                <th class="text-nowrap">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                             <tr>
-                                                <td>Lunar probe project</td>
-                                                <td>
-                                                    <div class="progress progress-xs margin-vertical-10 ">
-                                                        <div class="progress-bar bg-danger" style="width: 35% ;height:6px;"></div>
-                                                    </div>
-                                                </td>
-                                                <td>May 15, 2015</td>
-                                                <td>5000</td>
-                                                <td>200000</td>
-                                                <td class="text-nowrap">
-                                                    <a href="<?php echo base_url('home/contribute');?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="form" method="post" action="<?php echo site_url('');?>">
+                                    <div class="form-group m-t-40 row">
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="hidden" value="<?php echo $approve->loan_id ?>" id="" name="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Account" class="col-md-2 col-form-label">Name</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" readonly value="<?php echo $approve->user_id ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-number-input" class="col-md-2 col-form-label">Requested Amount</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="number" value="<?php echo $approve->amount ?>" readonly >
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Request Date</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="date" value="<?php echo $approve->loan_date ?>" readonly>
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Duration</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text" value="<?php echo $approve->duration ?>" readonly>
+                                        </div>
+                                    </div>
+                                      <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Approved Amount</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="approveamount" type="number" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Date Approved</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="dappove" type="date" value="" id="">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Deadline</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" name="deadline" type="date" value="" id="">
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        <button type="button" class="btn btn-inverse">Cancel</button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                 
-
                
                 <!-- Row -->
                 <!-- ============================================================== -->

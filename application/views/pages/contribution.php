@@ -75,38 +75,44 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form">
+                                <form class="form" method="POST" action="<?php echo site_url('contribution/create');?>">
                                    <div class="col-md-10">
-                                        <input class="form-control" type="hidden" value="" id="">
+                                        <input class="form-control" type="hidden"  name="cid" value="" id="">
                                     </div>
                                     <div class="form-group m-t-40 row">
                                         <label for="example-number-input" class="col-md-2 col-form-label">Contribution Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
+                                            <input class="form-control"  name="cname" type="text" id=cname"">
                                         </div>
                                     </div>
                                       <div class="form-group row">
                                         <label for="example-month-input" class="col-md-2 col-form-label">Member Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
+                                            <input class="form-control" type="text" name="mname" value="" id="mname">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-month-input" class="col-md-2 col-form-label">Amount</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
+                                            <input class="form-control" name="amount" type="text" value="" id="">
                                         </div>
                                     </div>
                                      <div class="form-group m-t-40 row">
                                         <label for="example-tel-input" class="col-md-2 col-form-label">Start Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                                            <input class="form-control" type="date" value="2011-08-19" name="sdate" id="sdate">
                                         </div>
                                     </div>
                                      <div class="form-group m-t-40 row">
                                         <label for="example-tel-input" class="col-md-2 col-form-label">End Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                                            <input class="form-control" type="date" value="2011-08-19" name="edate" id="edate">
+                                        </div>
+                                    </div>
+                                      <div class="form-group m-t-40 row">
+                                        <label for="example-tel-input" class="col-md-2 col-form-label">Created By</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" type="text"  name="created_by" id="">
                                         </div>
                                     </div>
                                     <div class="form-actions">
