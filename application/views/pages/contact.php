@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+    <title>Employee Contact</title>
    <?php $this->load->view('main/head');?>
+
 </head>
 
 <body class="fix-header card-no-border">
@@ -107,7 +109,7 @@
                                                <td>08133954447</td>
                                                <td>Hannyzee</td>
                                                <td><span class="label label-success">Member</span></td>
-                                               <td><a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a></td>
+                                                <td><a href="" class="text-inverse p-r-10" data-toggle="tooltip" title="" data-original-title="Edit"><i class="ti-marker-alt"></i></a> <a href="" class="text-inverse" title="" data-toggle="tooltip" data-original-title="Delete"><i class="ti-trash"></i></a></td>
                                            </tr>
                                         </tbody>
                                     </table>

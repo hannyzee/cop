@@ -105,7 +105,7 @@
                                                     <td><?php echo $loans->loan_id; ?></td>
                                                     <td><?php echo $loans->user_id; ?></td>
                                                     <td><?php echo $loans->amount; ?></td>
-                                                    <td><?php echo $loans->loan_date; ?></td>
+                                                    <td><?php echo $loans->ldate; ?></td>
                                                     <td><?php echo $loans->duration; ?></td>
                                                   <td><a href="<?php echo base_url('loan/loan_approval/'.$loans->loan_id);?>"><button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">view</button></a></td>
                                                 </tr>

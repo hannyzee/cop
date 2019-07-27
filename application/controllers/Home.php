@@ -43,7 +43,7 @@ class Home extends CI_Controller {
 	public function deposits()
 
 	{
-		$this->load->view('pages/account/deposit.php');
+		$this->load->view('pages/accounts/deposit.php');
 	}
 
 	public function balance()

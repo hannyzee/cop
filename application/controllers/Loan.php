@@ -15,7 +15,7 @@ class Loan extends CI_Controller
 	public function loans()
 	{
 		$loan_id = $this->input->post('loan_id');
-		$loan_date = $this->input->post('loan_date');
+		$loan_date = $this->input->post('ldate');
 		$loan_amount = $this->input->post('amount');
 		$loan_requestor = $this->input->post('user_id');
 		$loan_duration = $this->input->post('duration');
@@ -27,13 +27,13 @@ class Loan extends CI_Controller
 			$loan_requestor,
 			$loan_duration
 		));
-		redirect('loan/loans');
+		redirect('home');
 	}
 
 	// view loan request t
 	
 	public function request()
-	
+	{
 		 $loans = $this->loan_model->view_loanrequest();
          $this->load->view('pages/loan/view_loan', ["loans"=>$loans]);
 	}
@@ -48,9 +48,5 @@ class Loan extends CI_Controller
 		$this->load->view('pages/loan/approval', ["approve"=>$approve]);
 	}
 
-	public function FunctionName($value='')
-	{
-		# code...
-	}
 
 }

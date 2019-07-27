@@ -97,7 +97,7 @@
                                      <div class="form-group row">
                                         <label for="example-datetime-local-input" class="col-md-2 col-form-label">Request Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="date" value="<?php echo $approve->loan_date ?>" readonly>
+                                            <input class="form-control" type="date" value="<?php echo $approve->ldate ?>" readonly>
                                         </div>
                                     </div>
                                      <div class="form-group row">

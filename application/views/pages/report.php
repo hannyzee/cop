@@ -3,6 +3,8 @@
 <html lang="en">
 
 <head>
+    <title>Reports</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/html5-editor/bootstrap-wysihtml5.css');?>">
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -56,10 +58,6 @@
                         <li class="breadcrumb-item active">Form Layout</li>
                     </ol>
                 </div>
-                <div class="">
-                    <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
-                </div>
-            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -74,13 +72,19 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="click2edit m-b-40">Click on Edite button and change the text then save it.</div>
-                                <button id="edit" class="btn btn-info btn-rounded" onclick="edit()" type="button">Edit</button>
-                                <button id="save" class="btn btn-success btn-rounded" onclick="save()" type="button">Save</button>
+                                <h4 class="card-title">Generate Report</h4>
+                                <form method="post" action="<?php echo base_url('reports/submit');?>">
+                                    <input type="hidden" name="rid">
+                                    <input type="date" name="rdate">
+                                    <textarea id="mymce" name="rname"></textarea>
+                                      <div class="click2edit m-b-40">Click on Edite button and change the text then save it.</div>
+                                         <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        <button type="button" class="btn btn-inverse">Cancel</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
- 
                     </div>
                 </div>
                
@@ -132,9 +136,30 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
+     <!-- wysuhtml5 Plugin JavaScript -->
+     <script type="text/javascript" src="<?php echo base_url('assets/plugins/tinymce/tinymce.min.js');?>"></script>
+     <script type="text/javascript">
+           $(document).ready(function() {
+
+        if ($("#mymce").length > 0) {
+            tinymce.init({
+                selector: "textarea#mymce",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+
+            });
+        }
+    });
+     </script>
     <!-- Style switcher -->
     <!-- ============================================================== -->
-     <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>
+    <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>
 </body>
 
 </html>

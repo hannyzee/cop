@@ -1,20 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends CI_Controller {
+class Members extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
-		if (!$this->session->userdata('userid')) {
-			redirect('login');
-		}
+		$this->load->model('members_model');
+		
 	}
 
 	// displays membership registeration form
 	public function membership()
 	{
-		$this->load->view('pages/users')
-	}
+		 
+         $this->load->view('pages/members');
+	}	
 
+
+			
 }

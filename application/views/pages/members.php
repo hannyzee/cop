@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <title>Membership Form</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -77,7 +78,7 @@
                                 <h4 class="m-b-0 text-white">Other Sample form</h4>
                             </div>
                             <div class="card-body">
-                                <form action="#">
+                                <form action="" method="post">
                                     <div class="form-body">
                                         <h3 class="card-title">Person Info</h3>
                                         <hr>
@@ -138,7 +139,7 @@
                                               <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Username</label>
-                                                    <input type="text" class="form-control" placeholder="">
+                                                     <input class="form-control" type="text"  value="<?php echo $regmeb->duration ?>" readonly >
                                                 </div>
                                             </div>
                                         </div>

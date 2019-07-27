@@ -83,7 +83,7 @@
                                     <div class="form-group row">
                                         <label for="Account" class="col-md-2 col-form-label">Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text"  name="user_id id="">
+                                            <input class="form-control" type="text"  name="user_id">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -93,9 +93,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date and time</label>
+                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="date"  id="loan_date" name="loan_date">
+                                            <input class="form-control" type="date" name="ldate">
                                         </div>
                                     </div>
                                      <div class="form-group row">

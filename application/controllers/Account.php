@@ -40,12 +40,19 @@ class Account extends CI_Controller
 		redirect ('home');
 
 	}
+	
+
 
 	//displays types of  account(account type)
 	public function manage()
 	{
 	 	 $acctype = $this->account_model->view_accountype();
          $this->load->view('pages/accounts/view_account', ["acctype"=>$acctype]);
+	}
+
+	public function accounts()
+	{
+		# code...
 	}
 
 }

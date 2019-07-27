@@ -21,6 +21,14 @@ class Account_model extends CI_Model
         $query = $this->db->query("select * from accounttype");
         return $query->result();
     }
+    //genertin account number
+public function getUid($uid = null)
+{
+    while (! $this->isValid($uid)) {
+        $uid = sprintf('%04x%04x%02x', mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xff));
+    }
+    return $uid;
+}
 
 
 }

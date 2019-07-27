@@ -31,6 +31,9 @@ class Auth extends CI_Controller {
 			$this->session->set_userdata('userid', $user->userid);
 			redirect('home');
 		}
+		else{
+			echo "Wrong username or password";
+		}
 	}
 
 
@@ -64,10 +67,15 @@ class Auth extends CI_Controller {
 		));
 
 		// if sucessfull redirects to
-        redirect('users/membership');    
+        redirect('members/membership');    
 
 	}
     
+    public function membership($userid)
+	{
+		 $regmeb = $this->member_model->reg_members();
+         $this->load->view('pages/members', ["regmeb"=>$regmeb]);
+	}
 	public function logout()
 	{
 		session_destroy();
