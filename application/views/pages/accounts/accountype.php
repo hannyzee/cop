@@ -112,9 +112,8 @@
                                         </div>
                                     </div>
                                      <div class="form-group row">
-                                        <label for="example-month-input" class="col-md-2 col-form-label">Created By</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" name="createdby" id="">
+                                            <input class="form-control" type="hidden" name="createdby"  value="<?php echo  $_SESSION["userid"];?>"id="">
                                         </div>
                                     </div>
                                     <div class="form-actions">

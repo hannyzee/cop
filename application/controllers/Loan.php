@@ -47,6 +47,7 @@ class Loan extends CI_Controller
 		$approve = $this->loan_model->approve_loan($loan_id);
 		$this->load->view('pages/loan/approval', ["approve"=>$approve]);
 	}
+	//update 
 
 
 }

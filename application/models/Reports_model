@@ -7,7 +7,7 @@ class Reports_model extends CI_Model
  
  public function details($values)
 	{
-		$sql = "insert into report(rid,rname,rdate,createdby) values (?, ?, ?, ?)";
+		$sql = "insert into reports(rid,rname,rdate,createdby) values (?, ?, ?, ?)";
 		$querry = $this->db->query($sql, $values);
 
 		if ($query) {

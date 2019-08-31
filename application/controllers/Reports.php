@@ -4,12 +4,10 @@
  */
 class Reports extends CI_Controller
 {
-   public function __construct()
+  public function __construct()
     {
         parent::__construct();
-        $this->load->model('reports_model');
-
-        
+       // $this->load->model('Reports_model');   
     }
    //this displays the reports page
     public function report()
@@ -17,7 +15,7 @@ class Reports extends CI_Controller
         $this->load->view('pages/report');
     }
 
-    //this submits the report forms
+/*$this submits the report forms
     public function submit($value='')
     {
         $reportID = $this->input->post('rid');
@@ -31,8 +29,9 @@ class Reports extends CI_Controller
             $reportDate,
             $reportCreated
         ));
-        echo "<div>Report sucessfully submited</div>";
+        echo "reports submited sucessfully";
 
     }
    
+*/
 }

@@ -41,7 +41,7 @@
                                     <i class="ti-email"></i>
                                 </span>
                             </div>
-                            <input type="email" class="form-control" name="eemail" id="eemail" placeholder="Enter email" data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Email" required>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Email" required>
                         </div>
                     </div>
                     <div class="form-group">

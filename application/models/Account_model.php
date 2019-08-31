@@ -8,7 +8,6 @@ class Account_model extends CI_Model
         $sql ="insert into accounttype(acctid,acctname,minbalance,fixcharge,dicrip,createdby,datecreated) values(?, ?, ?, ?, ?, ?, ?)";
 
         $query = $this->db->query($sql, $values);
-    
         if($query){
             return "success";
         }else{
@@ -21,15 +20,23 @@ class Account_model extends CI_Model
         $query = $this->db->query("select * from accounttype");
         return $query->result();
     }
+    
+    /*
     //genertin account number
-public function getUid($uid = null)
-{
-    while (! $this->isValid($uid)) {
-        $uid = sprintf('%04x%04x%02x', mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xff));
+    public function getUid($uid = null)
+    {
+        while (! $this->isValid($uid)) {
+            $uid = sprintf('%04x%04x%02x', mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xff));
+        }
+        return $uid;
     }
-    return $uid;
-}
+    */
 
 
+    public function acctype($acctid)
+        {
+            $query = $this->db->query("select * from accounttype WHERE acctid = ?", [$acctid]);
+            return $query->row();
+        }
 }
 ?>

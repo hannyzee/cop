@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Account Types Detail</title>
+    <title>Update Account Types </title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -75,7 +75,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form" method="post"  >
+                                <form class="form" method="post" method="<?php echo base_url('account/update_acct');?>" >
                                     <div class="form-group m-t-40 row">
                                         <div class="col-md-10">
                                             <input class="form-control" type="hidden" name="acctid">
@@ -84,31 +84,31 @@
                                     <div class="form-group row">
                                         <label for="example-tel-input" class="col-md-2 col-form-label">Account Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo $accts->acctname ?>" readonly >
+                                            <input class="form-control" type="text" value="<?php echo $updateacct->acctname; ?>" readonly >
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-number-input" class="col-md-2 col-form-label">Minimum Balance</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="<?php echo $accts->minbalance; ?>"readonly>
+                                            <input class="form-control" type="number" value="<?php echo $updateacct->minbalance; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-datetime-local-input" class="col-md-2 col-form-label">fixed Charge</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="<?php echo $accts->fixcharge; ?>" id="" name="fixcharge" readonly>
+                                            <input class="form-control" type="number" value="<?php echo $updateacct->fixcharge; ?>" id="" name="fixcharge">
                                         </div>
                                     </div>
                                      <div class="form-group row">
                                         <label for="example-datetime-local-input" class="col-md-2 col-form-label">Type Discription</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo $accts->dicrip ?>" readonly>
+                                            <input class="form-control" type="text" value="<?php echo $updateacct->dicrip ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-month-input" class="col-md-2 col-form-label">Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="date" name="datecreated" id="" value="<?php echo $accts->datecreated; ?>" readonly>
+                                            <input class="form-control" type="date" name="datecreated" id="" value="<?php echo $updateacct->datecreated; ?>" >
                                         </div>
                                     </div>
                                      <div class="form-group row">
@@ -118,10 +118,10 @@
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <a href="<?php echo base_url('account/update_acct');?>" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
+                                        <button type="submit"  class="btn btn-success"> <i class="fa fa-check">Update</button>
+                                        <button type="submit"  class="btn btn-inverse">Cancel</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>

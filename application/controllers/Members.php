@@ -13,7 +13,6 @@ class Members extends CI_Controller {
 	// displays membership registeration form
 	public function membership()
 	{
-		 
          $this->load->view('pages/members');
 	}	
 

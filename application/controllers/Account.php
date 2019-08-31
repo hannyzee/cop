@@ -9,6 +9,8 @@ class Account extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('account_model');
+		$this->load->library('session');
+	    $this->session->set_userdata('myname', 'userid');
 		if (!$this->session->userdata('userid')) {
 			redirect('login');
 		}	
@@ -47,12 +49,52 @@ class Account extends CI_Controller
 	public function manage()
 	{
 	 	 $acctype = $this->account_model->view_accountype();
-         $this->load->view('pages/accounts/view_account', ["acctype"=>$acctype]);
+         $this->load->view('pages/accounts/account_table', ["acctype"=>$acctype]);
 	}
 
-	public function accounts()
+	public function view_account($acctid)
 	{
-		# code...
+		 $accts = $this->account_model->acctype($acctid);
+         $this->load->view('pages/accounts/view_account', ["accts"=>$accts]);
+	}
+
+	/*
+	//update account
+	public function update_acct()
+	{
+		$account_id = $this->input->post('acctid');
+		$data = array(
+			'account_name' => $this->input->post('acctname'),
+			'minimum_balance' => $this->input->post('minbalance'),
+			'fixed_charge' => $this->input->post('fixcharge'),
+			'account_name' => $this->input->post('acctname'),
+			'discription' => $this->input->post('discrip'),
+			'date_created' => $this->input->post('datecreated'),
+		);
+		$this->account_model->acctype($account_id,$updatacct);
+		$this->load->view('pages/accounts/update_account');
+		$data['updateacct'] = $this->load->Account_model->acctype('$acctid');
+		if (!empty($data['updateacct'])) {
+			$this->load->view('pages/accounts/update_account',$data);
+		}else{
+			redirect(site_url());
+		}
+	}
+*/
+
+	public function update_acct()
+	{
+		$account_id = $this->input->post('acctid');
+		$data = array(
+			'account_name' => $this->input->post('acctname'),
+			'minimum_balance' => $this->input->post('minbalance'),
+			'fixed_charge' => $this->input->post('fixcharge'),
+			'account_name' => $this->input->post('acctname'),
+			'discription' => $this->input->post('discrip'),
+			'date_created' => $this->input->post('datecreated'),
+		);
+		$this->account_model->acctype($account_id); 
+		$this->load->view('accounts/update_account');
 	}
 
 }

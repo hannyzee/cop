@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Account Types Detail</title>
    <?php $this->load->view('main/head');?>
 </head>
 
@@ -33,7 +31,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <?php $this->load->view('main/sidebar');?>
+             <?php $this->load->view('main/sidebar');?>
             <!-- End Sidebar scroll-->
         </aside>
         <!-- ============================================================== -->
@@ -48,16 +46,16 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Create Account</h3>
+                    <h3 class="text-themecolor">Loan Request</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item">Forms</li>
-                        <li class="breadcrumb-item active">Form Layout</li>
+                        <li class="breadcrumb-item">pages</li>
+                        <li class="breadcrumb-item active">Table basic</li>
                     </ol>
                 </div>
-                <div class="">
+                <div>
                     <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
                 </div>
             </div>
@@ -68,74 +66,59 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form" method="post"  >
-                                    <div class="form-group m-t-40 row">
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="hidden" name="acctid">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-tel-input" class="col-md-2 col-form-label">Account Name</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo $accts->acctname ?>" readonly >
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-number-input" class="col-md-2 col-form-label">Minimum Balance</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="<?php echo $accts->minbalance; ?>"readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">fixed Charge</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="number" value="<?php echo $accts->fixcharge; ?>" id="" name="fixcharge" readonly>
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-datetime-local-input" class="col-md-2 col-form-label">Type Discription</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo $accts->dicrip ?>" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-month-input" class="col-md-2 col-form-label">Date</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="date" name="datecreated" id="" value="<?php echo $accts->datecreated; ?>" readonly>
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label for="example-month-input" class="col-md-2 col-form-label">Created By</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo  $_SESSION["userid"];?>" readonly >
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <a href="<?php echo base_url('account/update_acct');?>" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
-                                    </div>
-                                </form>
+                                <h4 class="card-title">Data Export</h4>
+                                <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                                <div class="table-responsive m-t-40">
+                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Account Number</th>
+                                                <th>Account Name</th>
+                                                <th>Minimum Balance</th>
+                                                <th>Fixes Charge</th>
+                                                <th>Action</th>
+                                             
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Account Number</th>
+                                                <th>Account Name</th>
+                                                <th>Minimum Balance</th>
+                                                <th>Fixes Charge</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                           <?php 
+                                            foreach($acctype as $acctype){
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $acctype->acctid; ?></td>
+                                                    <td><?php echo $acctype->acctname; ?></td>
+                                                    <td><?php echo $acctype->minbalance; ?></td>
+                                                    <td><?php echo $acctype->fixcharge; ?></td>
+                                                     <td class="text-nowrap">
+                                                    <a href="<?php echo base_url('account/view_account/'.$acctype->acctid);?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                    <a href="#" data-toggle="tooltip" data-original-title="Deactivate"> <i class="fa fa-close text-danger"></i> </a>
+                                                </td>
 
+                                                </tr>
+                                            <?php }?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-               
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-               
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -143,9 +126,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer">
-                © 2017 Admin Press Admin by themedesigner.in
-            </footer>
+            <footer class="footer"> © 2017 Admin Press Admin by themedesigner.in </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -160,7 +141,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
+     <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/popper.min.js');?>"></script>
     <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js');?>"></script>
@@ -175,9 +156,60 @@
     <script src="<?php echo base_url('assets/plugins/sparkline/jquery.sparkline.min.js');?>"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url('assets/js/custom.min.js');?>"></script>
+  <!-- This is data table -->
+    <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js');?>"></script>
+    <!-- start - This is for export functionality only -->
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    </script>
+    <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-     <script src="<?php echo base_url('assets/plugins/styleswitcher/jQuery.style.switcher.js');?>"></script>
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

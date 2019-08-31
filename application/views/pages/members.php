@@ -139,7 +139,7 @@
                                               <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Username</label>
-                                                     <input class="form-control" type="text"  value="<?php echo $regmeb->duration ?>" readonly >
+                                                     <input class="form-control" type="text"  value=" " readonly >
                                                 </div>
                                             </div>
                                         </div>
