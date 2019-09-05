@@ -1,30 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class Auth extends CI_Controller
+{
 	/**
-	 * 
+	 *
 	 */
-		
-		public function __construct()
-		{
-			parent::__construct();
-		    $this->load->model('auth_model');
-		    $this->load->library('session');
-			$this->session->set_userdata('myname', 'userid');
-		}
 
-	public function index()
+	public function __construct()
 	{
-		$this->load->view('pages/login');
+		parent::__construct();
+	    $this->load->model('auth_model');
+		$this->session->set_userdata('myname', 'userid');
 	}
-    
-   /**
+
+
+	/**
 	 * Processes the login form
 	 * @return void
 	 */
-   public function authentication()
-   {
+	public function authentication()
+	{
    		$this->load->library('form_validation');
 
     	$this->form_validation->set_rules('userid', 'Userid', 'required');
@@ -47,6 +43,7 @@ class Auth extends CI_Controller {
 			echo "Wrong username or password";
 		}
 	}
+
     /*public function updatepassword()
     {
     	$email = $this->input->post('email');
@@ -60,9 +57,9 @@ class Auth extends CI_Controller {
     	else{
     		return 0;
     	}
-    		
+
     	// if sucessfull redirects to
-        redirect('home',@$data); 
+        redirect('home',@$data);
     }
     public function savepassword($newpassword)
     {
@@ -73,35 +70,45 @@ class Auth extends CI_Controller {
     }
     */
 
+	/**
+	 * Displays the login form
+	 *
+	 * @return void
+	 */
     public function login()
 	{
 		$this->load->view('pages/login');
 	}
+
 
 	public function sign_up()
 	{
 		$this->load->view('pages/register');
 	}
 
-	//recover password
+
+	/**
+	 * recover password
+	 *
+	 * @return void
+	 */
 	public function recover_password()
 	{
 		$this->load->view('pages/recover');
 	}
-	
+
 
 	/**
 	 * Processes the registeration form
+	 *
 	 * @return void
 	 */
-
 	public function register()
 	{
-
 		$username = $this->input->post('userid');
 		$email = $this->input->post('email');
 		$password = $this->input->post('pword');
-	
+
 		$this->auth_model->register_user(array(
 			$username,
 			$email,
@@ -110,18 +117,14 @@ class Auth extends CI_Controller {
 
 		if (password_verify($password, $user->pword)) {
 			// if sucessfull redirects to
-	        redirect('members/membership',@$data);  
+	        redirect('members/membership',@$data);
 		}
-
-
-		  
-
 	}
-    
+
+
 	public function logout()
 	{
 		session_destroy();
 		redirect('login');
 	}
-	
 }

@@ -75,19 +75,14 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form">
-                                    <div class="form-group m-t-40 row">
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="hidden" value="" id="" name="">
-                                        </div>
-                                    </div>
+                                <form action="<?php echo site_url('account/create_account'); ?>" method="POST" class="form">
                                     <div class="form-group row">
                                         <label for="example-tel-input" class="col-md-2 col-form-label">Account Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="" id="">
+                                            <input class="form-control" type="text" name="acct_name">
                                         </div>
                                     </div>
-                                      <div class="form-group row">
+                                    <div class="form-group row">
                                         <label for="example-month-input" class="col-md-2 col-form-label">Account Type</label>
                                         <div class="col-md-10">
                                              <select class="custom-select col-12" id="inlineFormCustomSelect">
@@ -97,23 +92,23 @@
                                                 <option value="3">Group Savings</option>
                                             </select>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="form-group row">
                                         <label for="example-number-input" class="col-md-2 col-form-label">Minimum Balance</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
+                                            <input class="form-control" type="number" value="0.00" name="min_balance">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-datetime-local-input" class="col-md-2 col-form-label">fixed Charge</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" value="0.00" id="">
+                                            <input class="form-control" type="number" value="0.00" name="fixed_charge">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-month-input" class="col-md-2 col-form-label">Date</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="date" value="" id="">
+                                            <input class="form-control" type="date" name="created_at">
                                         </div>
                                     </div>
                                     <div class="form-actions">
@@ -126,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
@@ -135,7 +130,7 @@
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
-               
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

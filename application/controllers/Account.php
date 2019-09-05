@@ -1,55 +1,75 @@
 <?php
 /**
- * 
+ *
  */
 class Account extends CI_Controller
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('account_model');
-		$this->load->library('session');
-	    $this->session->set_userdata('myname', 'userid');
+
 		if (!$this->session->userdata('userid')) {
 			redirect('login');
-		}	
+		}
 	}
+
 
     public function account_type()
 	{
 		$this->load->view('pages/accounts/accountype.php');
 	}
+
+	/**
+	 * @param void
+	 *
+	 * @return void
+	 *
+	 * @todo add description field on the account page.
+	 * @todo add createdby field on the account page.
+	 */
 	public function create_account()
 	{
+		echo "<pre>";print_r($_POST);echo "</pre>";exit;
 		$account_id = $this->input->post('acctid');
-		$account_name = $this->input->post('acctname');
-		$minimum_balance = $this->input->post('minbalance');
-		$fixed_charges = $this->input->post('fixcharge');
-		$discription = $this->input->post('dicrip');
-		$created_by = $this->input->post('createdby');
-		$date_created = $this->input->post('datecreated');
+		$account_name = $this->input->post('acct_name');
+		$minimum_balance = $this->input->post('min_balance');
+		$fixed_charges = $this->input->post('fixed_charge');
 
-		$this->account_model->accounts(array(
+		// TODO add description field on the main page.
+		// $description = $this->input->post('desc');
+
+		// TODO add createdby field on the main page.
+		// $created_by = $this->input->post('created_by');
+
+		$date_created = $this->input->post('created_at');
+
+		$this->account_model->create_account(array(
 			$account_id,
 			$account_name,
 			$minimum_balance,
 			$fixed_charges,
-			$discription,
+			$description,
 			$created_by,
 			$date_created
 		));
+
 		redirect ('home');
-
 	}
-	
 
 
-	//displays types of  account(account type)
+	/**
+	 * displays types of  account(account type)
+	 *
+	 * @param void
+	 *
+	 * @return void
+	 */
 	public function manage()
 	{
-	 	 $acctype = $this->account_model->view_accountype();
-         $this->load->view('pages/accounts/account_table', ["acctype"=>$acctype]);
+		$acctype = $this->account_model->view_accountype();
+    	$this->load->view('pages/accounts/account_table', ["acctype"=>$acctype]);
 	}
 
 	public function view_account($acctid)
@@ -93,7 +113,7 @@ class Account extends CI_Controller
 			'discription' => $this->input->post('discrip'),
 			'date_created' => $this->input->post('datecreated'),
 		);
-		$this->account_model->acctype($account_id); 
+		$this->account_model->acctype($account_id);
 		$this->load->view('accounts/update_account');
 	}
 
